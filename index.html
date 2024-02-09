@@ -1,152 +1,89 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>MERNa Web</title>
-	<style>
-		#urlInput {
-            width: 500px; 
-            padding: 10px;
-            font-size: 14px;
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+            text-align: center;
+            
+        margin-right:200px;
+        margin-left:200px;
+        color:black;
+        font: Times New Roman;
+        .large-font {
+            font-size: 20px; 
         }
-        #favoritePlacesJSON, #batmanJSON {
-            padding: 20px;
-            background-color: lightgray;
-            margin-top: 20px;
-        }
-		#testingDiv {
-            display: none;
-        }
+        background: -o-linear-gradient(left, rgb(248, 200, 208), rgb(235, 85, 110)); 
+        /*button {
+            margin-right: 10px; 
+        }*/
+        
+        } 
+       
+    
+    
     </style>
-</head>
-<body>
-	<h1>MERNa Web Application</h1>
-	<p>This is an HTML, CSS, and JavaScript MERNa web client. To test your MERNa server, enter your 
-	MERNa sever URL below and press test connection button.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Year One</title>
+        <link rel="stylesheet" href="styles.css"> 
+    </head>
+    <body>
+        <h1>Year One</h1> 
+        
+        
+        
+        
+        <p class="large-font">I made this website for you to celebrate out one year!! <br>
+        Happy Anniversary</p>
+        <button class ="big button" onclick="handleClick()">Click Me!</button>
+        
+        
+        <script>
+            function handleClick() {
+              
+                alert("i love you" );
+                
+            }
+           
+        </script>
+        <img src="carson.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> First Picture Together!! (I was so nervous to take this)</p>
 
-	<label for="urlInput">MERNa Server URL:</label><br />
-	<input type="text" id="urlInput" placeholder="Enter the URL of your remote MERNa server here..."><br /><br />
 
-	<button onclick="testMERNaServerConnection()">Test MERNa Server Connection</button>
-	<div id="ping"></div><br /><br />
+        <img src="carson1.jpg" alt="Dice" style="width:600px;height:400px;">
 
-	<script>
-		async function testMERNaServerConnection() {
-			const pingField = document.getElementById("ping");
-			pingField.innerHTML = "";
-			var div = document.getElementById('testingDiv');
-			div.style.display = 'none';
+        <img src="carson2.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> Your birthday date to the aquarium!</p>
 
-			const url = document.getElementById("urlInput").value + "/api/ping";
-			const response = await fetch(url);
-			const pingResponse = await response.text();
+        <img src="carson3.jpg" alt="Dice" style="width:600px;height:400px;">
+        <img src="carson4.jpg" alt="Dice" style="width:600px;height:400px;">
+        <img src="carson5.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> Visiting Media</p>
 
-			if (pingResponse === 'ping response') {
-				pingField.innerHTML = "Success!";
-				var div = document.getElementById('testingDiv');
-				div.style.display = 'block';
-			} 
-		}
-	</script>
+        <img src="carson6.jpg" alt="Dice" style="width:600px;height:400px;">
+        <img src="carson7.jpg" alt="Dice" style="width:600px;height:400px;">
+        <img src="carson8.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> Visiting New Baltimore</p>
 
-	<div id="testingDiv">
-		<button type="button" onclick="fetchAbout()">Fetch About</button>
-		<div id="fetch-about-result"></div>
-		<br><br>
+        <img src="carson9.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> First Date back from summer!</p>
 
-		<button type="button" onclick="fetch2Plus2()">Fetch 2plus2</button>
-		<div id="fetch-2plus2-result"></div>
-		<br><br>
+        <img src="carson10.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> Soccer Season! </p>
 
-		Add two integers on the Node.js server.<br />
-		<select onchange="addTwoIntegers()" id="x-value">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>100</option>
-		</select> +
+        <img src="carson11.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> Arcade Date</p>
 
-		<select onchange="addTwoIntegers()" id="y-value">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>100</option>
-		</select> = 
-		<input id="sum" disabled></input><br /><br /><br />
+        <img src="carson12.jpg" alt="Dice" style="width:600px;height:400px;">
+        <img src="carson13.jpg" alt="Dice" style="width:600px;height:400px;">
+        <img src="carson14.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p> Christmas</p>
 
-		<button type="button" onclick="calculateBMI()">Calculate BMI</button>
-		<div id="bmi-result"></div>
-		<br><br>
+        <img src="carson15.jpg" alt="Dice" style="width:600px;height:400px;">
+        <p>New Years!!</p>
 
-		<script>
-			let fetchAboutCounter = 0
-			async function fetchAbout() {
-				fetchAboutCounter++
-				const url = document.getElementById("urlInput").value + "/about";
-				const response = await fetch(url)
-				const responseText = await response.text()
-				document.getElementById("fetch-about-result").innerHTML = responseText + " ("+fetchAboutCounter+")"
-			}
+        <p> I love you so much and am so grateful for you. Here's to many more years!!</p>
 
-			let fetch2plus2Counter = 0
-			async function fetch2Plus2() {
-				fetch2plus2Counter++
-				const url = document.getElementById("urlInput").value + "/2plus2";
-				const response = await fetch(url)
-				const responseText = await response.text()
-				document.getElementById("fetch-2plus2-result").innerHTML = responseText + " ("+fetch2plus2Counter+")"
-			}
 
-			async function addTwoIntegers() {
-				const x = document.getElementById("x-value").value
-				const y = document.getElementById("y-value").value
-
-				// Note the URL (fetch) string will look something like '/add-two-integers?x=2&y=1' when it is sent.
-				const url = document.getElementById("urlInput").value
-				const fetchString = url+"/add-two-integers?x="+x+"&y="+y
-				const response = await fetch(fetchString)
-				const responseText = await response.text()
-				document.getElementById("sum").value = responseText
-			}
-
-			async function calculateBMI() {
-				// Approximate height and weight for a man in the US. 
-				const url = document.getElementById("urlInput").value;
-				const fetchString = url+'/calculate-bmi?feet=5&inches=10&lbs=186';
-				const response = await fetch(fetchString)
-				const responseText = await response.text()
-				console.log(responseText)
-				document.getElementById("bmi-result").innerHTML = responseText
-			}
-		</script>
-
-		<button onclick="fetchBatman()">Batman</button>
-		<div id="batmanJSON">Batman JSON</div><br /><br />
-		<script>
-			async function fetchBatman() {
-				const url = document.getElementById("urlInput").value + "/batman";
-				const response = await fetch(url);
-				const batmanResponse = await response.json();
-
-				const batmanJSONField = document.getElementById("batmanJSON");
-				const batmanResponseText = "<pre>"+JSON.stringify(batmanResponse, null, 4)+"</pre"
-				batmanJSONField.innerHTML = batmanResponseText
-			}
-		</script>
-
-		<button onclick="testFavoritePlaces()">Favorite Places</button>
-		<div id="favoritePlacesJSON">Favorite Places JSON</div><br /><br />
-		<script>
-			async function testFavoritePlaces() {
-				const url = document.getElementById("urlInput").value + "/api/favorite-places";
-				const response = await fetch(url);
-				const places = await response.json();
-
-				const favoritePlacesJSONField = document.getElementById("favoritePlacesJSON");
-				const favoritePlacesText = "<pre>"+JSON.stringify(places, null, 4)+"</pre"
-				favoritePlacesJSONField.innerHTML = favoritePlacesText
-			}
-		</script>
-	</div>
-</body>
+        </body>
 </html>
